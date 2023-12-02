@@ -58,8 +58,8 @@ function showDialogue() {
     dialogueContainer.style.display = "block";
 }
 
-
 function handleKeysOrder(btnClicked) {
+    // source: https://forums.tumult.com/t/creating-a-correct-order-for-buttons-to-be-pressed/10172/2
     if (currentClickID >= clickOrderIDs.length) {
         return;
     }   
@@ -74,9 +74,7 @@ function handleKeysOrder(btnClicked) {
     if(btnClicked == clickOrderIDs[currentClickID]) {
 		currentClickID++;
 		
-		// if there's nothing left, do a specific action
 		if(currentClickID == clickOrderIDs.length) {
-			// your code goes here... sample:
             infoDiv.innerHTML = "You got it! Go back to COO.";
             userState.cooDialogueID = 8;
             infoDiv.style.display = "block";
@@ -176,7 +174,7 @@ const dialogueNodes = [
 
     {
         id: 7,
-        text: "You got them? Awesome! But there's one more thing - you need to use them in the right order. Look around the lab one more time, I'm sure you can figure it out.",
+        text: "You got them? Awesome! But there's one more thing.. You need to figure out which key fits into which lock. Look around the lab one more time, and click the buttons that appeared on top of the screen in the right order.",
         answers: []
     },
     {
@@ -192,11 +190,11 @@ const dialogueNodes = [
                 nextNode: 10
             },
             {
-                text: "Can I use the laboratory at any time if I join the lab?",
+                text: "Can I use the laboratory at any time if I join you?",
                 nextNode: 11
             },
             {
-                text: "I don't have any other questions. See ya around! (end the game)",
+                text: "I don't have any other questions. See ya! (end the game)",
                 nextNode: 12
             }
         ]

@@ -84,8 +84,8 @@
 
         <div id="infoDiv" style="display: none;">Text</div>
 
-        <div id="projectsTextDiv" style="display: none;">Text</div>
         <div id="projectsDiv" style="display: none;">
+            <div id="projectsTextDiv" style="display: none;">Text</div>
             <div id="projectsBtnDiv" >
                 <button id="caverBtn" class="projectBtn">CAVER</button>
                 <button id="iMareCultureBtn" class="projectBtn">iMareCulture</button>
@@ -101,13 +101,23 @@
         <script src="./scripts/main.js"></script> 
 
         <div id="splash">
-            <div class="loading"></div>
+            LOADING...
+        </div>
+
+        <div id="introDiv">
+            <div id="introTextDiv">
+                Text
+            </div>
+            <button id="cancelIntroBtn">Close intro</button>
         </div>
 
         <!-- renderer="logarithmicDepthBuffer: true;" to solve problem with flickering -->
-        <a-scene id="scene" embedded vr-mode-ui="enabled: false" arjs="debugUIEnabled: false" renderer="logarithmicDepthBuffer: true;">                   
+        <a-scene id="scene" embedded vr-mode-ui="enabled: false" arjs="debugUIEnabled: false" renderer="logarithmicDepthBuffer: true; colorManagement: true;">                   
             <a-assets>
                 <a-asset-item id="COO" src="./models/coo.gltf"></a-asset-item> 
+            </a-assets>
+            <a-assets>
+                <a-asset-item id="COOwithVR" src="./models/cooWithVR.gltf"></a-asset-item> 
             </a-assets>
             <a-assets>
                 <a-asset-item id="lev" src="./models/lev.gltf"></a-asset-item> 
@@ -127,7 +137,7 @@
             </a-assets>
 
             <a-assets>
-                <a-asset-item id="oldPC" src="./models/oldPC.gltf"></a-asset-item> 
+                <a-asset-item id="oldPhoto" src="./models/oldPhoto.gltf"></a-asset-item> 
             </a-assets>
             <a-assets>
                 <a-asset-item id="projects" src="./models/projects.gltf"></a-asset-item> 
@@ -145,26 +155,25 @@
             </a-marker> 
 
             <a-marker id="hciMarker" type="pattern" url="./markers/black/pattern-hciMarker.patt" smooth="true" quiz-marker>
-                <a-entity gltf-model="#hci" rotation="-90 0 0" scale="0.05 0.05 0.05"></a-entity>
+                <a-entity gltf-model="#hci" rotation="-90 0 0" position="-0.3 0 0.5" scale="0.2 0.2 0.2"></a-entity>
             </a-marker> 
             <a-marker id="gameDevMarker" type="pattern" url="./markers/black/pattern-gameDesignMarker.patt" smooth="true" quiz-marker>
-                <a-entity gltf-model="#gameDev" rotation="-90 0 0" scale="0.9 0.9 0.9"></a-entity>
+                <a-entity gltf-model="#gameDev" scale="0.5 0.5 0.5"></a-entity>
             </a-marker> 
             <a-marker id="xrMarker" type="pattern" url="./markers/black/pattern-xrMarker.patt" smooth="true" quiz-marker>
-                <a-entity gltf-model="#xr" rotation="0 0 40" position="0 0 0.3" scale="0.3 0.3 0.3"></a-entity>
+                <a-entity gltf-model="#xr" scale="0.5 0.5 0.5"></a-entity>
             </a-marker> 
             <a-marker id="visMarker" type="pattern" url="./markers/black/pattern-visualizationMarker.patt" smooth="true" quiz-marker>
-                <a-entity gltf-model="#vis" rotation="40 0 0" scale="0.4 0.4 0.4"></a-entity>
+                <a-entity gltf-model="#vis" scale="0.5 0.5 0.5"></a-entity>
             </a-marker> 
 
             <a-marker id="oldPcMarker" type="pattern" url="./markers/black/pattern-monitor.patt" smooth="true" model-info>
-                <a-entity gltf-model="#oldPC" rotation="0 0 -15" scale="0.55 0.55 0.55"></a-entity>
+                <a-entity gltf-model="#oldPhoto" scale="0.5 0.5 0.5"></a-entity>
             </a-marker> 
 
             <a-marker id="visPaperMarker" type="pattern" url="./markers/black/pattern-visPaper.patt" smooth="true" projects-info>
                 <a-entity gltf-model="#projects" rotation="-90 0 0" ></a-entity>
             </a-marker> 
-
 
             <a-entity camera></a-entity>         
         </a-scene>

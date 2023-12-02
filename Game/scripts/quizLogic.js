@@ -18,6 +18,8 @@ cancelQuizBtn.addEventListener("click", cancelQuiz);
 let currentQuestionIndex;
 let currentArea;
 
+const keysRequired = 4;
+
 AFRAME.registerComponent('quiz-marker', {
     init: function() {
         this.el.addEventListener("markerFound", decideWhichMarkerFound);
@@ -131,6 +133,11 @@ function startQuiz() {
     currentQuestionIndex = 0;
     setNextQuestion();
     quizContainer.style.display = "block";
+    infoDiv.innerHTML = "You can move away from the marker, the quiz will stay on the screen.";
+    infoDiv.style.display = "block";
+    setTimeout(() => {
+        infoDiv.style.display = "none";
+    }, 3000); 
 }
 
 function setNextQuestion() {
@@ -149,38 +156,8 @@ function showQuestion(question) {
         }
         btn.addEventListener("click", selectQuizAnswer);
         quizButtons.appendChild(btn);
-    });
-    // if (currentArea == hciQuestions) {
-    //     quizInput.style.display = "block";
-    //     document.querySelector("#quizInptBtn").addEventListener("click", checkInput);       
-    // }
-    // else {
-    //     question.options.forEach(answer => {
-    //         const btn = document.createElement("button");
-    //         btn.innerHTML = answer.text;
-    //         btn.classList.add("quizBtn");
-    //         if (answer.correct) {
-    //            btn.dataset.correct = answer.correct; 
-    //         }
-    //         btn.addEventListener("click", selectQuizAnswer);
-    //         quizButtons.appendChild(btn);
-    //     });
-    // }
-   
+    });   
 }
-
-// function checkInput() {
-//     if (document.querySelector("#quizInpt").value == "2002") {
-//         document.querySelector(".researchAreaBtn").style.display = "none";
-//         setTimeout(cancelQuiz, 1500); 
-//         userState.hciQuizCompleted = true;
-//         userState.addKey();
-//         showInfoDiv("A key has been added to you inventory.", "correct");  
-//     }
-//     else {
-//         showInfoDiv("Incorrect, try again.", "wrong");
-//     }
-// }
 
 function resetQuizState() {
     quizInput.style.display = "none";
@@ -197,7 +174,7 @@ function selectQuizAnswer(e) {
     else {
         selectedBtn.classList.add("wrong");
         setTimeout(cancelQuiz, 1500); 
-        showInfoDiv("Incorrect, try again.", "wrong");
+        showInfoDiv("Incorrect, try again.", 1500, "wrong");
     }
 
     if (currentArea.length > currentQuestionIndex + 1){
@@ -220,11 +197,18 @@ function selectQuizAnswer(e) {
         }
         document.querySelector(".researchAreaBtn").style.display = "none";
         setTimeout(cancelQuiz, 1500); 
-        showInfoDiv("A key has been added to you inventory.", "correct");     
+        if (userState.numOfKeys == keysRequired) {
+            userState.cooDialogueID = 7;
+            document.querySelector("#userStateDiv").style.display = "none";
+            showInfoDiv("Go back to COO.", 3500);  
+        } 
+        else {
+            showInfoDiv("A key has been added to you inventory.", 1500, "correct");    
+        }
     }
 }
 
-function showInfoDiv(string, wantedClass = null) {
+function showInfoDiv(string, timeLimit, wantedClass = null) {
     if (wantedClass != null) {
         infoDiv.classList.add(wantedClass);
     }
@@ -232,11 +216,11 @@ function showInfoDiv(string, wantedClass = null) {
     infoDiv.style.display = "block";
     setTimeout(() => {
         infoDiv.style.display = "none";
-    }, 1500);   
+    }, timeLimit);   
     if (wantedClass != null) {
         setTimeout(() => {
             infoDiv.classList.remove(wantedClass);
-        }, 1500); 
+        }, timeLimit); 
     }
 }
 
