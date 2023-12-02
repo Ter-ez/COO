@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>HCI Lab AR Game</title>
+        <link rel="stylesheet" href="./style.css">
+
+        <!-- include A-Frame -->
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+        <!-- include Ar.js for A-Frame -->
+        <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+        <!-- include A-Frame extras (animation-mixer) -->
+        <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
+        <script src="./scripts/userState.js"></script> 
+        <script src="./scripts/intro.js"></script> 
+    </head>
+
+    <body onload="showIntro()">      
+        <script src="./scripts/cooDialogue.js"></script> 
+        
+        <div class="dialogueContainer" style="display: none;">
+            <div id="dialogueDiv">
+                Text
+            </div>
+            <div id="answerButtonsDiv">
+                <button id="dialogueBtn1" class="dialogueBtn">Btn 1</button>
+                <button id="dialogueBtn2" class="dialogueBtn">Btn 2</button>
+                <button id="dialogueBtn3" class="dialogueBtn">Btn 3</button>
+            </div>
+        </div>
+
+        <div class="miniGameContainer" style="display: none;">
+            <div id="scoreDiv">
+                Hit COO, avoid Lev
+            </div>
+            <div id="miniGameDiv">
+            </div>
+            <div id="miniGameControlDiv">
+                <button id="restartMiniGameBtn" class="miniGameControlBtn">Restart</button>  
+                <button id="cancelMiniGameBtn" class="miniGameControlBtn">Cancel</button>  
+            </div>
+        </div>
+
+        <div class="quizContainer" style="display: none;">           
+            <div class="quizQADiv">
+                <div id="questionDiv">
+                    Question ?
+                </div>
+                <div id="quizButtonsDiv" class="quizButtons">
+                    <button class="quizBtn">Answer 1</button>
+                    <button class="quizBtn">Answer 2</button>
+                    <button class="quizBtn">Answer 3</button>
+                    <button class="quizBtn">Answer 4</button>
+                </div>
+                <div id="quizInputDiv">
+                    <input id="quizInpt" type="number" placeholder="Tap here to type">
+                    <button id="quizInptBtn" class="quizBtn">Confirm</button>
+                </div>
+            </div>   
+            <div class="quizControlDiv">
+                <button id="cancelQuizBtn" class="quizControlBtn">Cancel</button>  
+            </div>      
+        </div>
+
+        <div id="researchAreaContainer" style="display: none;">
+            <div class="researchAreaText">Text</div>
+            <button class="researchAreaBtn" style="display: none;">Start</button>
+        </div>
+
+        <div id="userStateDiv" style="display: none;">
+            <div id="numOfKeys">Keys: 0/4</div>
+        </div>
+
+        <div id="keysOrderContainer" style="display: none;">
+            <div id="keysOrderDiv" >
+                <button id="keyBtn2" class="keyBtn">HCI</button>
+                <button id="keyBtn3" class="keyBtn">XR</button>
+                <button id="keyBtn1" class="keyBtn">Games</button>
+                <button id="keyBtn4" class="keyBtn">Vis</button>
+            </div>
+        </div>
+
+        <div id="infoDiv" style="display: none;">Text</div>
+
+        <div id="projectsTextDiv" style="display: none;">Text</div>
+        <div id="projectsDiv" style="display: none;">
+            <div id="projectsBtnDiv" >
+                <button id="caverBtn" class="projectBtn">CAVER</button>
+                <button id="iMareCultureBtn" class="projectBtn">iMareCulture</button>
+                <button id="arGogglesBtn" class="projectBtn">AR Goggles</button>
+            </div>
+        </div>
+
+        <script src="./scripts/quizLogic.js"></script>
+        <script src="./scripts/mole.js"></script> 
+        <script src="./scripts/modelsInfo.js"></script> 
+        <script src="./scripts/projects.js"></script> 
+
+        <script src="./scripts/main.js"></script> 
+
+        <div id="splash">
+            <div class="loading"></div>
+        </div>
+
+        <!-- renderer="logarithmicDepthBuffer: true;" to solve problem with flickering -->
+        <a-scene id="scene" embedded vr-mode-ui="enabled: false" arjs="debugUIEnabled: false" renderer="logarithmicDepthBuffer: true;">                   
+            <a-assets>
+                <a-asset-item id="COO" src="./models/coo.gltf"></a-asset-item> 
+            </a-assets>
+            <a-assets>
+                <a-asset-item id="lev" src="./models/lev.gltf"></a-asset-item> 
+            </a-assets>
+
+            <a-assets> 
+                <a-asset-item id="hci" src="./models/hci.gltf"></a-asset-item> 
+            </a-assets>
+            <a-assets> 
+                <a-asset-item id="gameDev" src="./models/dice.gltf"></a-asset-item> 
+            </a-assets>
+            <a-assets> 
+                <a-asset-item id="xr" src="./models/vr.gltf"></a-asset-item> 
+            </a-assets>
+            <a-assets> 
+                <a-asset-item id="vis" src="./models/terrainMap.gltf"></a-asset-item> 
+            </a-assets>
+
+            <a-assets>
+                <a-asset-item id="oldPC" src="./models/oldPC.gltf"></a-asset-item> 
+            </a-assets>
+            <a-assets>
+                <a-asset-item id="projects" src="./models/projects.gltf"></a-asset-item> 
+            </a-assets>
+
+
+
+            <!-- COO -->
+            <a-marker id="cooMarker" type="pattern" url="./markers/black/pattern-coo.patt" smooth="true" coo-dialogue>
+                <a-entity gltf-model="#COO" rotation="-90 0 0" position="0 0 0.5" scale="0.3 0.3 0.3" animation-mixer="clip: Waving"></a-entity>
+            </a-marker> 
+
+            <a-marker id="levMarker" type="pattern" url="./markers/black/pattern-lev.patt" smooth="true" whack-a-mole>
+                <a-entity gltf-model="#lev" rotation="-90 0 0" position="0 0 0.7" scale="0.3 0.3 0.3" animation-mixer></a-entity>
+            </a-marker> 
+
+            <a-marker id="hciMarker" type="pattern" url="./markers/black/pattern-hciMarker.patt" smooth="true" quiz-marker>
+                <a-entity gltf-model="#hci" rotation="-90 0 0" scale="0.05 0.05 0.05"></a-entity>
+            </a-marker> 
+            <a-marker id="gameDevMarker" type="pattern" url="./markers/black/pattern-gameDesignMarker.patt" smooth="true" quiz-marker>
+                <a-entity gltf-model="#gameDev" rotation="-90 0 0" scale="0.9 0.9 0.9"></a-entity>
+            </a-marker> 
+            <a-marker id="xrMarker" type="pattern" url="./markers/black/pattern-xrMarker.patt" smooth="true" quiz-marker>
+                <a-entity gltf-model="#xr" rotation="0 0 40" position="0 0 0.3" scale="0.3 0.3 0.3"></a-entity>
+            </a-marker> 
+            <a-marker id="visMarker" type="pattern" url="./markers/black/pattern-visualizationMarker.patt" smooth="true" quiz-marker>
+                <a-entity gltf-model="#vis" rotation="40 0 0" scale="0.4 0.4 0.4"></a-entity>
+            </a-marker> 
+
+            <a-marker id="oldPcMarker" type="pattern" url="./markers/black/pattern-monitor.patt" smooth="true" model-info>
+                <a-entity gltf-model="#oldPC" rotation="0 0 -15" scale="0.55 0.55 0.55"></a-entity>
+            </a-marker> 
+
+            <a-marker id="visPaperMarker" type="pattern" url="./markers/black/pattern-visPaper.patt" smooth="true" projects-info>
+                <a-entity gltf-model="#projects" rotation="-90 0 0" ></a-entity>
+            </a-marker> 
+
+
+            <a-entity camera></a-entity>         
+        </a-scene>
+    </body>
+</html>

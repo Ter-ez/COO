@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>HCILab - COO WebXR Hit Test</title>
+		
+		<script src=https://aframe.io/releases/1.4.0/aframe.min.js></script>
+		<script src=https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js></script>
+	</head>
+	<body>
+
+		<a-scene vr-mode-ui="enterVRButton: #myEnterVRButton;" webxr="optionalFeatures: hit-test;" ar-hit-test="target: #coo;" renderer="colorManagement: true;">
+			<a-assets>
+				<a-asset-item id="coo-gltf" src="models/cooWithoutVRsk.gltf"></a-asset-item>
+			</a-assets>
+
+			<!-- Hide VR button -->
+			<a id="myEnterVRButton" href="#" style="display: none;"></a>
+			
+			<div style="background-color: #292C33; padding: 15px; position: fixed; top: 25px; left: 25px; z-index: 1; border-radius: 10px;">
+				<select id="animSelect" style="background-color: #ebebeb; color: #292C33;">
+					<option value="waving">Waving</option>
+					<option value="idle">Bored Idle</option>
+					<option value="jump">Jumping</option>
+					<option value="dance">Dancing</option>
+					<option value="skip">Skip Walking</option>
+				</select>
+			</div>			
+			
+			<a-entity id="coo" gltf-model="#coo-gltf" scale="0.3 0.3 0.3" shadow="receive: false" animation-mixer="clip: Waving"></a-entity> 
+			
+			<script>
+				let selectedOpt = document.querySelector("#animSelect");
+				let cooEnt = document.querySelector("#coo");
+				selectedOpt.addEventListener("change", () => {
+					switch (selectedOpt.value) {
+						case "waving":
+							cooEnt.setAttribute("animation-mixer", {clip : "Waving"});
+							break;
+						case "idle":
+							cooEnt.setAttribute("animation-mixer", {clip : "Bored Idle"});
+							break;
+						case "jump":
+							cooEnt.setAttribute("animation-mixer", {clip : "Jump"});
+							break;
+						case "dance":
+							cooEnt.setAttribute("animation-mixer", {clip : "Floss Dance"});
+							break;
+						case "skip":
+							cooEnt.setAttribute("animation-mixer", {clip : "Skip Walking"});
+							break;
+				}
+					
+				})				
+			</script>
+
+			<a-entity id="rig" position="0 0 2.2">
+				<a-entity id="camera" camera look-controls position="0 1.6 0"></a-entity>
+			</a-entity>
+
+			<a-entity light="type: ambient; intensity: 0.5;"></a-entity>
+			<a-entity light="type: directional; castShadow: true; intensity: 0.6;" position="-1 2 4"></a-entity>
+
+			<a-sky hide-on-enter-ar color="#383838"></a-sky>
+		</a-scene>
+
+	</body>
+</html>

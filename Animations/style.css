@@ -1,0 +1,89 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+html {
+	height: 100%;
+}
+
+body{
+	background-color: rgb(100, 100, 100);
+    background: linear-gradient(0deg, rgba(235,235,235,1), rgba(56,56,56,1));
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    padding: 5%;
+	padding-bottom: 0%;
+	height: 100%;	
+	margin: 0%;
+}
+
+.dialogueBtnsDiv {
+	position: fixed;
+	text-align: center;
+	width: 80%;
+	margin: 0 auto;
+	bottom: 50px;
+	right: 10px;
+	left: 10px;
+	background: #383838;
+	color: #ebebeb;
+    border-radius: 5px;
+	padding: 5px;
+	z-index: 1;
+}
+
+#userNameDiv {
+	position: fixed;
+	width: 80%;
+	margin: 0 auto;
+	bottom: 50px;
+	right: 10px;
+	left: 10px;
+	background: #383838;
+	color: #ebebeb;
+    border-radius: 5px;
+	padding: 20px;
+	z-index: 1;
+	text-align: center;
+}
+
+.cooBubble {
+	position: fixed;
+	width: fit-content;
+	padding: 20px 60px;
+	margin: 0 auto;
+	bottom: 50px;
+	right: 10px;
+	left: 10px;
+	background: #383838;
+	color: #ebebeb;
+    border-radius: 12px;
+	z-index: 1;
+}
+
+.answerBtn {
+	color: #ebebeb; 
+	width: 100%;
+	background-color: #383838;
+	text-align: center; 
+	z-index: 1;
+	padding: 5px;
+}
+
+.answerBtnNextToEachOther {
+	color: #ebebeb; 
+	width: 10%;
+	margin-left: 15px;
+	background-color: #383838;
+	text-align: center; 
+	z-index: 1;
+	padding: 5px;
+}
+
+body > footer {
+	position: sticky;
+	top: 100vh;
+	color: #383838;
+	opacity: 0.4;
+  }
