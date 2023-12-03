@@ -406,7 +406,7 @@ const visQuestions = [
                 correct: true
             },
             {
-                text: "Underground tunnels and shafts in Czech cities.",
+                text: "Underground tunnels and shafts in Czech cities",
                 correct: false
             },
             {
