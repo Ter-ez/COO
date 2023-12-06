@@ -18,8 +18,6 @@ let score = 0;
 let gameOver = false;
 let gameSet = false;
 
-//const scoreRequired = 300;
-
 AFRAME.registerComponent('whack-a-mole', {
     init: function() {
         this.el.addEventListener("markerFound", showGameArea);
@@ -28,7 +26,7 @@ AFRAME.registerComponent('whack-a-mole', {
 });
 
 function showGameArea() {
-    textDivG.innerHTML = "I'm Lev, the mascot of Visitlab, our laboratories cooperate with each other. Have you met COO? Is he making you play his stupid game? Well, I've created a game too.. Do you want to play a Whack-A-Mole? Or.. Whack-A-COO?"
+    textDivG.innerHTML = "I'm Lev, the mascot of Visitlab, our laboratories cooperate with each other. Have you met COO? Is he making you play his stupid game? Well, I've created a game too.. Do you want to play a Whack-A-Mole? Or.. Whack-A-COO? Play as long as you want, there's no goal."
     let btn = document.querySelector(".researchAreaBtn");
     if (btn) {
         btn.parentNode.removeChild(btn);
@@ -64,9 +62,7 @@ function cancelMole() {
 }
 
 function setGame() {
-    //set up the grid in html
-    for (let i = 0; i < 9; i++) { //i goes from 0 to 8, stops at 9
-        //<div id="0-8"></div>
+    for (let i = 0; i < 9; i++) { 
         let tile = document.createElement("div");
         tile.id = i.toString();
         tile.addEventListener("click", selectTile);
@@ -130,16 +126,6 @@ function selectTile() {
         currentMoleTile.innerHTML = "";
         score += 10;
         document.getElementById("scoreDiv").innerHTML = "Score: " + score.toString();
-        // if (score == scoreRequired && userState.gameStarted && !userState.gameAreaCompleted) {
-        //     userState.addKey();
-        //     showInfo("A key has been added to your inventory. Btw, in the game development programm, they will teach you to create much cooler games than a simple Whack A Mole.")
-        //     //gameOver = true;
-        //     userState.gameAreaCompleted = true;
-        //     //document.querySelector("#miniGameControlDiv").style.display = "none";
-        //     ///setTimeout(cancelMole, 1500);
-        //     //let btn = document.querySelector(".researchAreaBtn");
-        //     //btn.parentNode.removeChild(btn);
-        // }
     }
     else if (this == currentPlantTile) {
         currentPlantTile.innerHTML = "";
@@ -147,25 +133,6 @@ function selectTile() {
         gameOver = true;
     }
 }
-
-// function endMole() {
-//     userState.addKey();
-//     showInfo("A key has been added to your inventory.")
-//     gameOver = true;
-//     userState.gameAreaCompleted = true;
-//     document.querySelector("#miniGameControlDiv").style.display = "none";
-//     setTimeout(cancelMole, 1500);
-//     let btn = document.querySelector(".researchAreaBtn");
-//     btn.parentNode.removeChild(btn);
-// }
-
-// function showInfo(string) {
-//     infoDivG.innerHTML = string;
-//     infoDivG.style.display = "block";
-//     setTimeout(() => {
-//         infoDivG.style.display = "none";
-//     }, 4500);   
-// }
 
 function hideMole() {
     miniGameContainer.style.display = "none";

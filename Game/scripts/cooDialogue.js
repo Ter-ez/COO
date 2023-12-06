@@ -8,6 +8,8 @@ AFRAME.registerComponent('coo-dialogue', {
     }
 });
 
+
+// dialogue logic    https://www.youtube.com/watch?v=R1S_NhKkvGA
 function showDialogue() {
     let currentTextNode = selectText(userState.cooDialogueID);
     if (currentTextNode.id == 12) {
@@ -59,7 +61,7 @@ function showDialogue() {
 }
 
 function handleKeysOrder(btnClicked) {
-    // source: https://forums.tumult.com/t/creating-a-correct-order-for-buttons-to-be-pressed/10172/2
+    // https://forums.tumult.com/t/creating-a-correct-order-for-buttons-to-be-pressed/10172/2
     if (currentClickID >= clickOrderIDs.length) {
         return;
     }   

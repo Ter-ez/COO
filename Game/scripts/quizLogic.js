@@ -128,7 +128,7 @@ function showGames() {
     researchAreaContainer.style.display = "block";
 }
 
-// quiz
+// quiz    https://www.youtube.com/watch?v=riDzcEQbX6k
 function startQuiz() {
     currentQuestionIndex = 0;
     setNextQuestion();
