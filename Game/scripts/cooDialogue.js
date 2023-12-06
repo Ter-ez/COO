@@ -179,7 +179,7 @@ const dialogueNodes = [
     },
     {
         id: 8,
-        text: "Congratulations, you got it! You are free to go now, the door's unlocked. But I hope to see you around, you'd be a great addition to our team! Do you have any more questions about the lab?",
+        text: "Congratulations, you got it! Thanks for playing, the door's unlocked. But I hope to see you around, you'd be a great addition to our team! Do you have any more questions about the lab?",
         answers: [
             {
                 text: "So.. The HCI Lab is open for every student?",

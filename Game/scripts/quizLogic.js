@@ -236,7 +236,7 @@ function hideResearchAreaDiv() {
 
 const hciQuestions = [
     {
-        question: "What is the main goal of HCI?",
+        question: "What is the main goal of the field of human-computer interaction? (Try to deduce it.)",
         options: [
             {
                 text: "To make the communication between machines and humans as easy as possible",
@@ -253,7 +253,7 @@ const hciQuestions = [
         ]
     },
     {
-        question: "When was the HCI Laboratory established? (You can find it at another marker)",
+        question: "When was the HCI Laboratory established? (You can find it at another marker.)",
         options: [
             {
                 text: "1998",
@@ -291,7 +291,7 @@ const hciQuestions = [
         ]
     },
     {
-        question: "UX and UI design are a big part of HCI. What do these terms stand for?",
+        question: "UX and UI design are a big part of HCI. What do these terms stand for? (Try to deduce it.)",
         options: [
             {
                 text: "User Experience, User Involvement",
@@ -311,7 +311,7 @@ const hciQuestions = [
 
 const xrQuestions = [
     {
-        question: "Which technology transfers its user to a fully virtual environment?",
+        question: "Which technology transfers its user to a fully virtual environment? (Try to deduce it.)",
         options: [
             {
                 text: "AR",
@@ -328,7 +328,7 @@ const xrQuestions = [
         ]
     },
     {
-        question: "Which technology enhances user's physical surrounding with virtual elements and makes it possible for virtual and physical elements to interact?",
+        question: "Which technology enhances user's physical surrounding with virtual elements and makes it possible for virtual and physical elements to interact? (Try to deduce it.)",
         options: [
             {
                 text: "AR",
@@ -345,7 +345,7 @@ const xrQuestions = [
         ]
     },
     {
-        question: "Which technology enhances user's surrounding with virtual elements without making it possible for virtual and physical elements to interact?",
+        question: "Which technology enhances user's surrounding with virtual elements without making it possible for virtual and physical elements to interact? (Try to deduce it.)",
         options: [
             {
                 text: "AR",
@@ -362,7 +362,7 @@ const xrQuestions = [
         ]
     },
     {
-        question: "What did the AR Goggles project focus on? (You can find at another marker)",
+        question: "What did the AR Goggles project focus on? (You can find at another marker.)",
         options: [
             {
                 text: "AR glasses for geodesists",
@@ -379,7 +379,7 @@ const xrQuestions = [
         ]
     },
     {
-        question: "What is the name of the project that uses AR to visualize underwater cultural heritage? (You can find it at another marker)",
+        question: "What is the name of the project that uses AR to visualize underwater cultural heritage? (You can find it at another marker.)",
         options: [
             {
                 text: "iMareHeritage",
@@ -399,7 +399,7 @@ const xrQuestions = [
 
 const visQuestions = [
     {
-        question: "What data is visualized in the CAVER project? (You can find it at anther marker)",
+        question: "What data is visualized in the CAVER project? (You can find it at anther marker.)",
         options: [
             {
                 text: "Tunnels and channels in protein structures",
@@ -416,7 +416,7 @@ const visQuestions = [
         ]
     },
     {
-        question: "What is the name of the laboratory we collaborate with? (You can find it at another marker)",
+        question: "What is the name of the laboratory we collaborate with? (You can find it at another marker.)",
         options: [
             {
                 text: "Visitlab",
@@ -436,7 +436,7 @@ const visQuestions = [
 
 const gamesQuestions = [
     {
-        question: "Our laboratory focuses on gamification. What does it mean?",
+        question: "Our laboratory focuses on gamification. What does it mean? (Try to deduce it.)",
         options: [
             {
                 text: "The creation of game consoles from old objects",
@@ -453,7 +453,7 @@ const gamesQuestions = [
         ]
     },
     {
-        question: "What does esports stand for?",
+        question: "What does esports stand for? (Try to deduce it.)",
         options: [
             {
                 text: "Electronic sports",
@@ -470,7 +470,7 @@ const gamesQuestions = [
         ]
     },
     {
-        question: "What courses related to games do our members teach? (It is mentioned at a marker)",
+        question: "What courses related to games do our members teach? (You can find it at another marker.)",
         options: [
             {
                 text: "Game development, game design, 3D modelling, games user research",
