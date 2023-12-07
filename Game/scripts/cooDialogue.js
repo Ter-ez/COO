@@ -118,14 +118,14 @@ function hideDialogue() {
 const dialogueNodes = [
     {
         id: 1,
-        text: "Hello! You're the new student, right? I was told to meet you here. I'm COO.",
+        text: "Hello! Are you the new student? I'm COO, nice to meet you!",
         answers: [
             {
-                text: "Who are you?",
+                text: "COO who?",
                 nextNode: 2
             },
             {
-                text: "I think somebody locked us in here. Do you know something about it?",
+                text: "Do you know something about the locked door?",
                 nextNode: 3
             },
             {
@@ -140,7 +140,7 @@ const dialogueNodes = [
     },
     {
         id: 2,
-        text: "Oh, I thought that's obvious.. I'm COO, the mascot of the HCI Lab! ",
+        text: "Oh, I thought that's obvious.. COO, the mascot of HCI Lab! ",
         answers: [
             {
                 text: "Back",
@@ -150,7 +150,7 @@ const dialogueNodes = [
     },
     {
         id: 3,
-        text: "Yeah, well.. That was me. Everyone is always busy around here, working on their project.. I just want to have a little bit of fun!",
+        text: "Yeah, well.. I was the one who locked it. Everyone is always busy around here, working on their project.. I just want to have a little bit of fun!",
         answers: [
             {
                 text: "Back",
