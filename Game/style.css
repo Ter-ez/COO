@@ -211,7 +211,7 @@ body {
 #miniGameDiv div {
     width: 90px;
     height: 90px;
-    background-image: url("./Game/assets/tree.png");
+    background-image: url("./assets/tree.png");
     background-size: cover;
     border: solid 2px #242424;
     z-index: 1;
