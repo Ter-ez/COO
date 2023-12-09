@@ -1,6 +1,7 @@
 const projectsDiv = document.querySelector("#projectsDiv");
 const projectsTextDiv = document.querySelector("#projectsTextDiv");
 
+// source of descriptions of projects: https://hci.fi.muni.cz/research/ 
 document.querySelector("#iMareCultureBtn").addEventListener("click", () => {
     projectsTextDiv.innerHTML = "This project aims in bringing inherenty ureachable underwater cultural heritage within reach of the wide public by implementing virtual visits, serious games with immersive technologies and underwater AR."
     projectsTextDiv.style.display = "block"

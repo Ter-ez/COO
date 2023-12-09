@@ -2,6 +2,24 @@
     box-sizing: border-box;
 }
 
+body {
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: justify;
+    background-color: #242424;
+}
+
+#splash {
+    position: fixed;  
+    bottom: 10%;
+	right: 0px;
+	left: 0px;
+    margin: 0 auto;
+    width: fit-content;
+    color: #FFFAFA;
+}
+
+
 #introDiv {
     position: fixed;  
     text-align: center;
@@ -35,24 +53,6 @@
     font-size: 16px;
 }
 
-#splash {
-    position: fixed;  
-    bottom: 0px;
-	right: 0px;
-	left: 0px;
-    margin: 0 auto;
-    width: 100px;
-    height: 100px;
-    color: #FFFAFA;
-}
-
-body {
-	font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    text-align: justify;
-    background-color: #242424;
-}
-
 
 .dialogueContainer {  
     position: fixed;
@@ -70,7 +70,7 @@ body {
 
 #dialogueDiv {
 	color: #FFFAFA;
-    border: solid 2px #242424;
+    background-color: #242424;
     border-radius: 5px;
     padding-top: 10px;
     width: fit-content;
@@ -87,7 +87,7 @@ body {
 	width: 95%;
 	background-color: #242424;
     border: solid 2px #FFFAFA;
-    box-shadow: 0 0 10px 2px;
+    box-shadow: 0 0 10px 1px;
     border-radius: 5px;
     margin: 3px auto;
 	text-align: center; 
@@ -95,6 +95,7 @@ body {
 	padding: 5px;
     font-size: 16px;
 }
+
 
 #keysOrderContainer {
     position: fixed;
@@ -127,6 +128,7 @@ body {
 	padding: 5px;
     font-size: 16px;
 }
+
 
 #projectsTextDiv {
     position: fixed;
@@ -175,6 +177,7 @@ body {
 	padding: 5px;
     font-size: 14px;
 }
+
 
 .miniGameContainer {
     font-size: 18px;
@@ -233,6 +236,7 @@ body {
     font-size: 16px;
     margin: 40px auto;
 }
+
 
 .quizContainer {
     text-align: center;
@@ -298,6 +302,7 @@ body {
     border-radius: 5px;
 }
 
+
 #researchAreaContainer {
     position: fixed;
     width: 100%;
@@ -331,6 +336,7 @@ body {
     box-shadow: 0 0 10px 2px;
 }
 
+
 #userStateDiv {
     position: fixed;
     width: 90%;
@@ -348,6 +354,7 @@ body {
     border: solid 2px #FFFAFA;
     box-shadow: 0 0 10px 5px;
 }
+
 
 #infoDiv {
     position: fixed;
@@ -372,30 +379,3 @@ body {
 #infoDiv.wrong {
     background-color: rgb(192, 43, 58);
 }
-
-#screenDiv {
-    position: fixed;
-    padding: 10px;
-	right: 5px;
-	left: 5px;
-    text-align: center;
-    top: 5px;
-    bottom: 5px;
-    margin: 5px auto;
-	z-index: 1;  
-    color: #FFFAFA; 
-	background-color: #242424;
-    border: solid 2px rgb(40, 195, 174);;
-    box-shadow: 0 0 10px 5px;
-}
-
-
-#introVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    height: 100%;
-    object-fit: contain;
-  }

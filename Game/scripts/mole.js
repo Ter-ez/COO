@@ -1,4 +1,5 @@
-// https://www.youtube.com/watch?v=ej8SatOj3V4
+// source: https://www.youtube.com/watch?v=ej8SatOj3V4
+// Kenny Yip Coding, Whack a Mole Game in Javascript HTML CSS
 
 const miniGameContainer = document.querySelector(".miniGameContainer");
 
@@ -26,18 +27,16 @@ AFRAME.registerComponent('whack-a-mole', {
 });
 
 function showGameArea() {
-    textDivG.innerHTML = "I'm Lev, the mascot of Visitlab, our laboratories cooperate with each other. Have you met COO? Is he making you play his stupid game? Well, I've created a game too.. Do you want to play a Whack-A-Mole? Or.. Whack-A-COO? Play as long as you want, there's no goal."
+    textDivG.innerHTML = "I'm Lev, the mascot of Visitlab, our laboratories cooperate with each other. Is COO making you play his stupid game? Well, I've created a game too.. Do you want to play a Whack-A-Mole? Or.. Whack-A-COO? Play as long as you want, there's no goal."
     let btn = document.querySelector(".researchAreaBtn");
     if (btn) {
         btn.parentNode.removeChild(btn);
     }   
-    //if (userState.gameStarted) {
-        btn = document.createElement('button');
-        btn.innerHTML = "Play Whack-A-Mole";
-        btn.classList.add("researchAreaBtn");
-        btn.addEventListener("click", showMole);
-        researchAreaContainer.appendChild(btn);  
-    //}
+    btn = document.createElement('button');
+    btn.innerHTML = "Play Whack-A-Mole";
+    btn.classList.add("researchAreaBtn");
+    btn.addEventListener("click", showMole);
+    researchAreaContainer.appendChild(btn);  
     researchAreaContainerG.style.display = "block"
 }
 
@@ -46,8 +45,7 @@ function showMole() {
         setGame();
         gameSet = true;
     }
-    miniGameContainer.style.display = "block";
-    
+    miniGameContainer.style.display = "block";    
 }
 
 function restartMole() {

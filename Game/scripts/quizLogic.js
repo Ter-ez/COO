@@ -11,6 +11,7 @@ const infoDiv = document.querySelector("#infoDiv");
 let hciMarker = document.querySelector("#hciMarker");
 let xrMarker = document.querySelector("#xrMarker");
 let visMarker = document.querySelector("#visMarker");
+let gamesMarker = document.querySelector("#gameDevMarker");
 
 const cancelQuizBtn = document.querySelector("#cancelQuizBtn");
 cancelQuizBtn.addEventListener("click", cancelQuiz);
@@ -32,16 +33,18 @@ function decideWhichMarkerFound() {
     hciMarker = document.querySelector("#hciMarker");
     xrMarker = document.querySelector("#xrMarker");
     visMarker = document.querySelector("#visMarker");
+    gamesMarker = document.querySelector("#gameDevMarker");
     if (hciMarker.object3D.visible) {
+        //window.alert("HCI")
         showHCI()
     }
-    else if (visMarker.object3D.visible){
+    if (visMarker.object3D.visible){
         showVis();
     }
-    else if (xrMarker.object3D.visible) {
+    if (xrMarker.object3D.visible) {
         showXR()
     }
-    else {
+    if (gamesMarker.object3D.visible) {
         showGames()
     }
 }
