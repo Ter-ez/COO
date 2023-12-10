@@ -11,15 +11,12 @@ const infoDiv = document.querySelector("#infoDiv");
 let hciMarker = document.querySelector("#hciMarker");
 let xrMarker = document.querySelector("#xrMarker");
 let visMarker = document.querySelector("#visMarker");
-let gamesMarker = document.querySelector("#gameDevMarker");
 
 const cancelQuizBtn = document.querySelector("#cancelQuizBtn");
 cancelQuizBtn.addEventListener("click", cancelQuiz);
 
 let currentQuestionIndex;
 let currentArea;
-
-const keysRequired = 4;
 
 AFRAME.registerComponent('quiz-marker', {
     init: function() {
@@ -33,18 +30,16 @@ function decideWhichMarkerFound() {
     hciMarker = document.querySelector("#hciMarker");
     xrMarker = document.querySelector("#xrMarker");
     visMarker = document.querySelector("#visMarker");
-    gamesMarker = document.querySelector("#gameDevMarker");
     if (hciMarker.object3D.visible) {
-        //window.alert("HCI")
         showHCI()
     }
-    if (visMarker.object3D.visible){
+    else if (visMarker.object3D.visible){
         showVis();
     }
-    if (xrMarker.object3D.visible) {
+    else if (xrMarker.object3D.visible) {
         showXR()
     }
-    if (gamesMarker.object3D.visible) {
+    else {
         showGames()
     }
 }
@@ -181,7 +176,7 @@ function selectQuizAnswer(e) {
     }
 
     if (currentArea.length > currentQuestionIndex + 1){
-        currentQuestionIndex++;
+        currentQuestionIndex++; 
         setTimeout(setNextQuestion, 1500);
     }
     else if (selectedBtn.classList.contains("correct")){
@@ -198,7 +193,11 @@ function selectQuizAnswer(e) {
         else {
             userState.xrQuizCompleted = true;
         }
-        document.querySelector(".researchAreaBtn").style.display = "none";
+
+        let btnShown = document.querySelector(".researchAreaBtn");
+        if (btnShown) {
+            btnShown.style.display = "none";
+        }
         setTimeout(cancelQuiz, 1500); 
         if (userState.numOfKeys == keysRequired) {
             userState.cooDialogueID = 7;
@@ -229,7 +228,7 @@ function showInfoDiv(string, timeLimit, wantedClass = null) {
 
 function cancelQuiz() {
     currentQuestionIndex = 0;
-    quizContainer.style.display = "none";
+    document.querySelector(".quizContainer").style.display = "none";
 }
 
 function hideResearchAreaDiv() {

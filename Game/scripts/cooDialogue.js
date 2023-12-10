@@ -1,5 +1,5 @@
-let currentClickID = 0;
 const clickOrderIDs = ["keyBtn1", "keyBtn2", "keyBtn3", "keyBtn4"];
+let currentClickID = 0;
 
 AFRAME.registerComponent('coo-dialogue', {
     init: function() {
@@ -9,7 +9,12 @@ AFRAME.registerComponent('coo-dialogue', {
 });
 
 
-// dialogue logic    https://www.youtube.com/watch?v=R1S_NhKkvGA
+// Dialogue logic https://www.youtube.com/watch?v=R1S_NhKkvGA
+// Title: JavaScript-Text-Adventure
+// Author: WebDevSimplified
+// Date: 2019
+// Available: https://github.com/WebDevSimplified/JavaScript-Text-Adventure
+
 function showDialogue() {
     let currentTextNode = selectText(userState.cooDialogueID);
     if (currentTextNode.id == 12) {
@@ -76,7 +81,7 @@ function handleKeysOrder(btnClicked) {
     if(btnClicked == clickOrderIDs[currentClickID]) {
 		currentClickID++;
 		
-		if(currentClickID == clickOrderIDs.length) {
+		if(currentClickID == keysRequired) {
             infoDiv.innerHTML = "You got it! Go back to COO.";
             userState.cooDialogueID = 8;
             infoDiv.style.display = "block";

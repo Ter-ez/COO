@@ -1,3 +1,5 @@
+const keysRequired = 4;
+
 function UserState() {
     this.numOfKeys = 0;
     this.hciQuizCompleted = false;
