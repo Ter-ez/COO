@@ -1,6 +1,11 @@
 *{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+	user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 html {
