@@ -71,8 +71,8 @@ function setGame() {
         document.getElementById("miniGameDiv").appendChild(tile);
     }
 
-    setInterval(setMole, 666);
-    setInterval(setPlant, 600);
+    setInterval(setMole, 1000);
+    setInterval(setPlant, 800);
 }
 
 function setMole() {
