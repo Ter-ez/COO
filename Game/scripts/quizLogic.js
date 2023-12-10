@@ -127,7 +127,12 @@ function showGames() {
     researchAreaContainer.style.display = "block";
 }
 
-// quiz    https://www.youtube.com/watch?v=riDzcEQbX6k
+// Quiz logic  https://www.youtube.com/watch?v=riDzcEQbX6k
+// Title: Javascript Quiz App
+// Author: WebDevSimplified
+// Date: 2019
+// Available: https://github.com/WebDevSimplified/JavaScript-Quiz-App
+
 function startQuiz() {
     currentQuestionIndex = 0;
     setNextQuestion();

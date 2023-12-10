@@ -1,10 +1,8 @@
-// source: https://www.youtube.com/watch?v=ej8SatOj3V4
-// Kenny Yip Coding, Whack a Mole Game in Javascript HTML CSS
-// Dialogue logic https://www.youtube.com/watch?v=ej8SatOj3V4
-// Title: JavaScript-Text-Adventure
-// Author: WebDevSimplified
-// Date: 2019
-// Available: https://github.com/WebDevSimplified/JavaScript-Text-Adventure
+// Whac a Mole Game in Javascript HTML CSS https://www.youtube.com/watch?v=ej8SatOj3V4
+// Title: Whac-A-Mole
+// Author: ImKennyYip
+// Date: 2023
+// Available: https://github.com/ImKennyYip/whac-a-mole
 
 const miniGameContainer = document.querySelector(".miniGameContainer");
 
