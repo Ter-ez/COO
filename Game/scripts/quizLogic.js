@@ -27,6 +27,7 @@ AFRAME.registerComponent('quiz-marker', {
 
 
 function decideWhichMarkerFound() {
+    cancelMole();
     hciMarker = document.querySelector("#hciMarker");
     xrMarker = document.querySelector("#xrMarker");
     visMarker = document.querySelector("#visMarker");
