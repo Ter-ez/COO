@@ -1,16 +1,14 @@
-// Whac a Mole Game in Javascript HTML CSS https://www.youtube.com/watch?v=ej8SatOj3V4
+// Whac a Mole Game in Javascript HTML CSS: https://www.youtube.com/watch?v=ej8SatOj3V4
 // Title: Whac-A-Mole
 // Author: ImKennyYip
 // Date: 2023
 // Available: https://github.com/ImKennyYip/whac-a-mole
+// Source code adapted
 
 const miniGameContainer = document.querySelector(".miniGameContainer");
-
 const textDivG = document.querySelector(".researchAreaText");
 const researchAreaContainerG = document.querySelector("#researchAreaContainer");
-
 const infoDivG = document.querySelector("#infoDiv");
-
 const restartMiniGameBtn = document.querySelector("#restartMiniGameBtn");
 restartMiniGameBtn.addEventListener("click", restartMole);
 const cancelMiniGameBtn = document.querySelector("#cancelMiniGameBtn");

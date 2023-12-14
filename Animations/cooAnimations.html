@@ -94,30 +94,37 @@
         <script src="./jsAnimations/jumpDialogue.js"></script>  
         <script src="./jsAnimations/danceDialogue.js"></script>  
 
-        <a-scene id="sceneAnimations" embedded vr-mode-ui="enabled: false" arjs="debugUIEnabled: false">
+        <a-scene id="sceneAnimations" embedded vr-mode-ui="enabled: false" arjs="debugUIEnabled: false; colorManagement: true;">
             <a-assets>
                 <a-asset-item id="CooWithoutVR" src="./models/cooWithoutVRsk.gltf"></a-asset-item> 
                 <a-asset-item id="CooWithVR" src="./models/cooWithVR.gltf"></a-asset-item>
+                <a-asset-item id="Lev" src="./models/lev.gltf"></a-asset-item>
             </a-assets>
-            <a-marker id="wavingMarker" type="pattern" url="./markers/pattern-Waving.patt" smooth="true" waving-dialogue>
-                <a-gltf-model src="#CooWithoutVR" rotation="-90 0 0" position="0 0 0.5" scale="0.3 0.3 0.3" animation-mixer="clip: Waving"></a-gltf-model>
+            <a-marker id="wavingMarker" type="pattern" url="../markers/pattern-coo.patt" smooth="true" waving-dialogue>
+                <a-entity gltf-model="#CooWithoutVR" rotation="-90 0 0" position="0 0 0.5" scale="0.3 0.3 0.3" animation-mixer="clip: Waving"></a-entity>
             </a-marker> 
-            <a-marker id="boredMarker" type="pattern" url="./markers/pattern-Bored.patt" smooth="true" bored-dialogue> 
-                <a-gltf-model src="#CooWithoutVR" rotation="-90 0 0" position="0 0 0.5" scale="0.3 0.3 0.3" animation-mixer="clip: Bored Idle"></a-gltf-model>
+            <a-marker id="boredMarker" type="pattern" url="../markers/pattern-monitor.patt" smooth="true" bored-dialogue> 
+                <a-entity gltf-model="#CooWithoutVR" rotation="-90 0 0" position="0 0 0.5" scale="0.3 0.3 0.3" animation-mixer="clip: Bored Idle"></a-entity>
             </a-marker>
-            <a-marker id="jumpMarker" type="pattern" url="./markers/pattern-Jump.patt" smooth="true" jump-dialogue>
-                <a-gltf-model src="#CooWithoutVR" rotation="-90 0 0" position="0 0 0.5" scale="0.3 0.3 0.3" animation-mixer="clip: Jump"></a-gltf-model>
+            <a-marker id="jumpMarker" type="pattern" url="../markers/pattern-hciMarker.patt" smooth="true" jump-dialogue>
+                <a-entity gltf-model="#CooWithoutVR" rotation="-90 0 0" position="0 0 0.5" scale="0.3 0.3 0.3" animation-mixer="clip: Jump"></a-entity>
             </a-marker>
-            <a-marker id="danceMarker" type="pattern" url="./markers/pattern-Dance.patt" smooth="true" dance-dialogue>
-                <a-gltf-model src="#CooWithoutVR" rotation="-90 0 0" position="0 0 0.5" scale="0.3 0.3 0.3" animation-mixer="clip: Floss Dance"></a-gltf-model>
+            <a-marker id="danceMarker" type="pattern" url="../markers/pattern-visualizationMarker.patt" smooth="true" dance-dialogue>
+                <a-entity gltf-model="#CooWithoutVR" rotation="-90 0 0" position="0 0 0.5" scale="0.3 0.3 0.3" animation-mixer="clip: Floss Dance"></a-entity>
             </a-marker>
-            <a-marker id="skipMarker" type="pattern" url="./markers/pattern-SkipWalking.patt" smooth="true" skip-dialogue>
-                <a-gltf-model src="#CooWithoutVR" rotation="-90 0 0" position="0 0 0.5" scale="0.3 0.3 0.3" animation-mixer="clip: Skip Walking"></a-gltf-model>
+            <a-marker id="skipMarker" type="pattern" url="../markers/pattern-gameDesignMarker.patt" smooth="true" skip-dialogue>
+                <a-entity gltf-model="#CooWithoutVR" rotation="-90 0 0" position="0 0 0.5" scale="0.3 0.3 0.3" animation-mixer="clip: Skip Walking"></a-entity>
             </a-marker>
-            <a-marker type="pattern" url="./markers/pattern-VR.patt" smooth="true" vr-dialogue>
-                <a-gltf-model src="#CooWithVR" rotation="-90 0 0" position="0 0 0.5" scale="0.3 0.3 0.3" animation-mixer="clip: VR"></a-gltf-model>
+            <a-marker type="pattern" url="../markers/pattern-xrMarker.patt" smooth="true" vr-dialogue>
+                <a-entity gltf-model="#CooWithVR" rotation="-90 0 0" position="0 0 0.5" scale="0.3 0.3 0.3" animation-mixer="clip: VR"></a-entity>
             </a-marker>
 
+            <a-marker type="pattern" url="../markers/pattern-lev.patt" smooth="true">
+                <a-entity gltf-model="#Lev" rotation="-90 0 0" position="0 0 0.5" scale="0.3 0.3 0.3" animation-mixer="clip: Waving"></a-entity>
+            </a-marker>
+            <a-marker type="pattern" url="../markers/pattern-projects.patt" smooth="true">
+                <a-entity gltf-model="#Lev" rotation="-90 0 0" position="0 0 0.5" scale="0.3 0.3 0.3" animation-mixer="clip: Shuffle"></a-entity>
+            </a-marker>
 
             <a-entity camera></a-entity>
         </a-scene>
