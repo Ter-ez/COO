@@ -94,7 +94,7 @@
         <script src="./jsAnimations/jumpDialogue.js"></script>  
         <script src="./jsAnimations/danceDialogue.js"></script>  
 
-        <a-scene id="sceneAnimations" embedded vr-mode-ui="enabled: false" arjs="debugUIEnabled: false; colorManagement: true;">
+        <a-scene id="sceneAnimations" embedded vr-mode-ui="enabled: false" arjs="debugUIEnabled: false;" renderer="logarithmicDepthBuffer: true; colorManagement: true;">
             <a-assets>
                 <a-asset-item id="CooWithoutVR" src="./models/cooWithoutVRsk.gltf"></a-asset-item> 
                 <a-asset-item id="CooWithVR" src="./models/cooWithVR.gltf"></a-asset-item>
@@ -120,10 +120,10 @@
             </a-marker>
 
             <a-marker type="pattern" url="../markers/pattern-lev.patt" smooth="true">
-                <a-entity gltf-model="#Lev" rotation="-90 0 0" position="0 0 0.5" scale="0.3 0.3 0.3" animation-mixer="clip: Waving"></a-entity>
+                <a-entity gltf-model="#Lev" rotation="-90 0 0" position="0 0 0.5" scale="0.32 0.32 0.32" animation-mixer="clip: Waving"></a-entity>
             </a-marker>
             <a-marker type="pattern" url="../markers/pattern-projects.patt" smooth="true">
-                <a-entity gltf-model="#Lev" rotation="-90 0 0" position="0 0 0.5" scale="0.3 0.3 0.3" animation-mixer="clip: Shuffle"></a-entity>
+                <a-entity gltf-model="#Lev" rotation="-90 0 0" position="0 0 0.5" scale="0.32 0.32 0.32" animation-mixer="clip: Shuffle"></a-entity>
             </a-marker>
 
             <a-entity camera></a-entity>
