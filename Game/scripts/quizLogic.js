@@ -172,7 +172,10 @@ function resetQuizState() {
 
 function selectQuizAnswer(e) {
     const selectedBtn = e.target;
-    selectedBtn.disabled = true;
+    //selectedBtn.disabled = true;
+    Array.from(quizButtons.children).forEach(child => {
+        child.disabled = true;
+    })
     if (selectedBtn.dataset.correct) {
         selectedBtn.classList.add("correct");
     }
